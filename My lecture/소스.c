@@ -1,16 +1,18 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-void pm() {
+typedef long long ll;
+
+int pm() {
 	int n1 = 1;
 	printf("n1 = %d", n1);
 	n1++;
 	printf("n1 = %d", n1++);
 	printf("n1 = %d", n1);
 
-	return;
+	return 0;
 }
-void comp() {
+int comp() {
 	int n1 = 1, n2 = 2;
 	int result = 0;
 	printf("result = %d\n", result);
@@ -21,8 +23,16 @@ void comp() {
 	result = (n1 == n2);
 	printf("result = %d\n", result);
 
-	return;
+	return 0;
+}
+int calculation() {
+	ll a, b;
+	scanf("%lld %lld", &a, &b);
+	printf("%lld %lld %lld %.2lf", a + b, a - b, a * b, (double)a / b);
+	return 0;
 }
 int main() {
+	calculation();
 
+	return 0;
 }
