@@ -1,8 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
+#include<string.h>
 
 typedef long long ll;
+typedef long double ld;
 
+//plus, minus
 int pm() {
 	int n1 = 1;
 	printf("n1 = %d", n1);
@@ -12,6 +15,7 @@ int pm() {
 
 	return 0;
 }
+//compare
 int comp() {
 	int n1 = 1, n2 = 2;
 	int result = 0;
@@ -25,14 +29,38 @@ int comp() {
 
 	return 0;
 }
+//Four rule calculation
 int calculation() {
-	ll a, b;
-	scanf("%lld %lld", &a, &b);
-	printf("%lld %lld %lld %.2lf", a + b, a - b, a * b, (double)a / b);
+	ld a, b;
+	scanf("%Lf %Lf", &a, &b);
+	printf("plu : %.2Lf\nmin : %.2Lf\nmul : %.2Lf\ndiv : %.2Lf\n", a + b, a - b, a * b, a / b);
+	return 0;
+}
+//integer, real number
+int valuetype() {
+	short i1 = 0;
+	int i2 = 0;
+	long i3 = 0;
+	ll i4 = 0;//integer
+	float r1 = 0.0;
+	double r2 = 0.0;
+	ld r3 = 0.0;//real number;
+
+	return 0;
+}
+//for
+int repeat() {
+	double n = 0.0;
+	for (int i = 0; i < 100; i++)
+	{
+		n += 0.1;
+	}
+	printf("%lf", n);
+
 	return 0;
 }
 int main() {
-	calculation();
+	repeat();
 
 	return 0;
 }
