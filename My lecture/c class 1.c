@@ -5,7 +5,6 @@
 
 typedef long long ll;
 typedef long double ld;
-typedef long long double lld;
 
 //plus, minus
 int pm() {
@@ -46,8 +45,7 @@ int valuetype() {
 	ll i4 = 0;//integer
 	float r1 = 0.0;
 	double r2 = 0.0;
-	ld r3 = 0.0;
-	lld r4 = 0.0;//real number;
+	ld r3 = 0.0;//real number
 
 	return 0;
 }
@@ -70,15 +68,21 @@ int bitwise() {
 	printf("OR 연산의 결과 : %d\n", num1 | num2);
 	printf("XOR 연산의 결과 : %d\n", num1 ^ num2);
 	printf("NOT 연산의 결과 : %d\n", ~num1);
-	printf("bit 이동 왼쪽 2 : %d\n", num1 << 2);
-	printf("bit 이동 왼쪽 3 : %d\n", num1 << 3);
-	printf("bit 이동 오른쪽 2 : %d\n", num1 >> 2);
-	printf("bit 이동 오른쪽 3 : %d\n", num1 >> 3);
+	printf("bit 이동 왼쪽 1 : %d\n", 1 << 1);
+	printf("bit 이동 왼쪽 2 : %d\n", 1 << 2);
+	printf("bit 이동 왼쪽 3 : %d\n", 1 << 3);
+	printf("bit 이동 왼쪽 4 : %d\n", 1 << 4);
+	printf("bit 이동 왼쪽 14 : %d\n", 1 << 14);
+	printf("bit 이동 오른쪽 1 : %d\n", 2048 >> 1);
+	printf("bit 이동 오른쪽 2 : %d\n", 2048 >> 2);
+	printf("bit 이동 오른쪽 3 : %d\n", 2048 >> 3);
+	printf("bit 이동 오른쪽 4 : %d\n", 2048 >> 4);
+	printf("bit 이동 오른쪽 14 : %d\n", 2048 >> 14);
 	return 0;
 }
 
 
-//problem 1
+
 int p1() {
 	int n1, n2;
 	scanf("%d %d", &n1, &n2);
@@ -87,11 +91,26 @@ int p1() {
 	return 0;
 }
 
+int p2() {
+	int n;
+	scanf("%d", &n);
+	n = ~n;
+	n++;
+	printf("%d", n);
+	return 0;
+}
+
+int p3() {
+	int n = 3;
+	n = n << 3;
+	n = n >> 2;
+	printf("%d", n);
+}
 
 
 
 int main() {
-	bitwise();
+	p3();
 
 	return 0;
 }
