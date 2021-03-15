@@ -1,9 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<string.h>
+#define INT_MAX 0x7fffffff
 
 typedef long long ll;
 typedef long double ld;
+typedef long long double lld;
 
 //plus, minus
 int pm() {
@@ -44,7 +46,8 @@ int valuetype() {
 	ll i4 = 0;//integer
 	float r1 = 0.0;
 	double r2 = 0.0;
-	ld r3 = 0.0;//real number;
+	ld r3 = 0.0;
+	lld r4 = 0.0;//real number;
 
 	return 0;
 }
@@ -59,8 +62,36 @@ int repeat() {
 
 	return 0;
 }
+//bit operator
+int bitwise() {
+	int num1 = 15;
+	int num2 = 20;
+	printf("AND 연산의 결과 : %d\n", num1 & num2);
+	printf("OR 연산의 결과 : %d\n", num1 | num2);
+	printf("XOR 연산의 결과 : %d\n", num1 ^ num2);
+	printf("NOT 연산의 결과 : %d\n", ~num1);
+	printf("bit 이동 왼쪽 2 : %d\n", num1 << 2);
+	printf("bit 이동 왼쪽 3 : %d\n", num1 << 3);
+	printf("bit 이동 오른쪽 2 : %d\n", num1 >> 2);
+	printf("bit 이동 오른쪽 3 : %d\n", num1 >> 3);
+	return 0;
+}
+
+
+//problem 1
+int p1() {
+	int n1, n2;
+	scanf("%d %d", &n1, &n2);
+	printf("%d\n", n1 | n2);
+
+	return 0;
+}
+
+
+
+
 int main() {
-	repeat();
+	bitwise();
 
 	return 0;
 }
