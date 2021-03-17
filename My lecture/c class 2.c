@@ -48,8 +48,41 @@ int p6() {
 	printf("%d",((a > c) && (b > d)));
 }
 
+int p7() {
+	int a, b, c;
+	scanf("%d %d", &a, &b);
+	c = ++a + b--;
+	printf("a = %d b = %d c = %d",a, b, c);
+
+	return 0;
+}
+
+int p8() {
+	double a, b, c;
+	scanf("%lf %lf %lf", &a, &b, &c);
+	printf("avg = %.1f", (a + b + c) / 3);
+
+	return 0;
+}
+
+int p9() {
+	double a, b, c;
+	scanf("%lf %lf %lf", &a, &b, &c);
+	printf("sum = %d avg = %d", (int)(a + b + c), (int)((a + b + c) / 3));
+
+	return 0;
+}
+
+int p10() {
+	int a, b, c;
+	scanf("%d %d %d", &a, &b, &c);
+	printf("%d %d %d %d", (a > b), (b >= c), (a <= b), (b < c));
+
+	return 0;
+}
+
 int main() {
-	p6();
+
 
 	return 0;
 }
