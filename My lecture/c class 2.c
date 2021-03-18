@@ -81,8 +81,49 @@ int p10() {
 	return 0;
 }
 
-int main() {
+int p11() {
+	int a, b, c, d, e;
+	scanf("%d %d %d %d %d", &a, &b, &c, &d, &e);
+	printf("%d %d %d %d %d", a + 3, b - 3, c * 3, d / 3, e % 3);
 
+	return 0;
+}
+
+int p12() {
+	int a = 10, b = 10;
+	printf("최촛값 a = %d b = %d\n\n\n", a, b);
+	printf("a++ = %d ++b = %d\n", a++, ++b);
+	printf("실행후 a = %d b = %d\n\n\n", a, b);
+	printf("a-- = %d --b = %d\n",a--, --b);
+	printf("실행후 a = %d b = %d\n\n\n", a, b);
+
+	return 0;
+}
+
+int p13() {
+	int a, b;
+	scanf("%d %d", &a, &b);
+	printf("%d %d", a += 100, b /= 10);
+
+	return 0;
+}
+
+int p14() {
+	printf("%s\n%d\n%f\n%f\n%d + %d = %d\n%s", "수를 출력할때는 따옴표를 생략합니다.", 123, 6.5, 68.6, 10, 5, 10 + 5, "내 생일은 2005년 03월 18일 입니다.");
+
+	return 0;
+}
+
+int p15() {
+	int a;
+	scanf("%d", &a);
+	printf("%d초는 %d분 %d초 입니다.", a, a / 60, a % 60);
+
+	return 0;
+}
+
+int main() {
+	p14();
 
 	return 0;
 }
