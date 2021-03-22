@@ -186,10 +186,31 @@ int p6() {
 	return 0;
 }
 
+int p7() {
+	int dec, oct, hex;
+	scanf("%d %o %x", &dec, &oct, &hex);
+	printf("decimal : %d %d %d\n", dec, oct, hex);
+	printf("octal : %o %o %o\n", dec, oct, hex);
+	printf("hexadecimal : %x %x %x\n", dec, oct, hex);
+	printf("Hexadecimal : %X %X %X\n", dec, oct, hex);
+
+	return 0;
+}
+
+int p8() {
+	int t = 1;
+	while (t <= 10) {
+		printf("%d\n", t);
+		t++;
+	}
+
+	return 0;
+}
+
 
 
 int main() {
-	format();
+	p8();
 
 	return 0;
 }
