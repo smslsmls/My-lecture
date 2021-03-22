@@ -261,10 +261,22 @@ int p12() {
 	return 0;
 }
 
+int p13() {
+	int n1=1, n2;
+	while (n1++ < 9) {
+		n2 = 0;
+		while (n2++ < 9)
+			printf("%d * %d = %d\n", n1, n2, n1 * n2);
+		printf("\n");
+	}
+
+	return 0;
+}
+
 
 
 int main() {
-	p12();
+	p13();
 
 	return 0;
 }
