@@ -203,6 +203,60 @@ int p8() {
 		printf("%d\n", t);
 		t++;
 	}
+	printf("\n");
+	t = 0;
+	while (t++ < 10) {
+		printf("%d\n", t);
+	}
+	printf("\n");
+	t = 1;
+	do {
+		printf("%d\n", t);
+	} while (t++ < 10);
+
+	return 0;
+}
+
+int p9() {
+	int N;
+	int t = 1;
+	ll sum = 0;
+	scanf("%d", &N);
+	do {
+		sum += t;
+	} while (t++ < N);
+	printf("%lld", sum);
+
+	return 0;
+}
+
+int p10() {
+	int n;
+	ll sum = 0;
+	do {
+		scanf("%d", &n);
+		sum += n;
+	} while (n != 0);
+	printf("%lld", sum);
+
+	return 0;
+}
+
+int p11() {
+	int t = 0;
+	while (t++ < 9) {
+		printf("%d * %d = %d\n", 2, t, 2 * t);
+	}
+
+	return 0;
+}
+
+int p12() {
+	int N, t = 0;
+	scanf("%d", &N);
+	while (t++ < 9) {
+		printf("%d * %d = %d\n", N, t, N * t);
+	}
 
 	return 0;
 }
@@ -210,7 +264,7 @@ int p8() {
 
 
 int main() {
-	p8();
+	p12();
 
 	return 0;
 }
