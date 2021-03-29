@@ -390,24 +390,47 @@ int p19() {
 //  *  
 // *** 
 //*****
+int p20() {
+	int N;
+	scanf("%d", &N);
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 1; j <= N * 2 - 1; j++)
+		{
+			if (N - i <= j && N + i >= j) {
+					printf("*");
+			}
+			else
+				printf(" ");
+			
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
+
+//  *  
+// *** 
+//*****
 // *** 
 //  *  
-int p20() {
-	int n;
-	scanf("%d", &n);
-	for (int i = 0; i < n * 2 - 1; i++)
+int p21() {
+	int N;
+	scanf("%d", &N);
+	for (int i = 0; i < N * 2 - 1; i++)
 	{
-		for (int j = 1; j <= n * 2 - 1; j++)
+		for (int j = 1; j <= N * 2 - 1; j++)
 		{
-			if (n > i) {
-				if (n - i <= j && n + i >= j) {
+			if (N > i) {
+				if (N - i <= j && N + i >= j) {
 					printf("*");
 				}
 				else
 					printf(" ");
 			}
 			else {
-				if (i - n + 2 <= j && n * 3 - i - 2 >= j) {
+				if (i - N + 2 <= j && N * 3 - i - 2 >= j) {
 					printf("*");
 				}
 				else
