@@ -1,8 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
+#include<stdlib.h>
 #include<string.h>
 #include<math.h>
-#define INT_MAX 0x7fffffff
+#include<limits.h>
 
 typedef long long ll;
 typedef long double ld;
@@ -131,6 +132,20 @@ int format() {
 
 	return 0;
 }
+//for repeat2
+int repeat2() {
+	printf("====================\n");
+	for (int j = 2; j < 10; j++)
+	{
+		for (int i = 1; i < 10; i++)
+		{
+			printf("%d * %d = %d\n", j, i, j * i);
+		}
+		printf("====================\n");
+	}
+
+	return 0;
+}
 
 
 
@@ -156,6 +171,8 @@ int p3() {
 	n = n << 3;
 	n = n >> 2;
 	printf("%d", n);
+
+	return 0;
 }
 
 int p4() {
@@ -262,7 +279,7 @@ int p12() {
 }
 
 int p13() {
-	int n1=1, n2;
+	int n1 = 1, n2;
 	while (n1++ < 9) {
 		n2 = 0;
 		while (n2++ < 9)
@@ -273,10 +290,139 @@ int p13() {
 	return 0;
 }
 
+int p14() {
+	for (int i = 9; i > 1; i--)
+	{
+		for (int j = 1; j < 10; j++)
+		{
+			printf("%d * %d = %d\n", i, j, i * j);
+		}
+		printf("\n");
+	}
+	return 0;
+}
+
+int p15() {
+	for (int i = 9; i < 81; i++)
+	{
+		printf("%d * %d = %d\n", i / 9 + 1, i % 9 + 1, (i / 9 + 1) * (i % 9 + 1));
+	}
+
+	return 0;
+}
+
+int p16() {
+	int a, b;
+	int sum = 0, mul = 1;
+	scanf("%d %d", &a, &b);
+	for (int i = a; i <= b; i++)
+	{
+		sum += i;
+		mul *= i;
+	}
+	printf("%d %d", sum, mul);
+
+	return 0;
+}
+
+//*****
+//*****
+//*****
+//*****
+//*****
+int p17() {
+	int N;
+	scanf("%d", &N);
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < N; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
+
+//*****
+//****
+//***
+//**
+//*
+int p18() {
+	int N;
+	scanf("%d", &N);
+	for (int i = N - 1; i >= 0; i--)
+	{
+		for (int j = 0; j <= i; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
+
+//*****
+// ****
+//  ***
+//   **
+//    *
+int p19() {
+	int N;
+	scanf("%d", &N);
+	for (int i = N; i > 0; i--)
+	{
+		for (int j = i; j < N; j++)
+		{
+			printf(" ");
+		}
+		for (int j = 0; j < i; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+
+//  *  
+// *** 
+//*****
+// *** 
+//  *  
+int p20() {
+	scanf("%d", &n);
+	for (int i = 0; i < n * 2 - 1; i++)
+	{
+		for (int j = 1; j <= n * 2 - 1; j++)
+		{
+			if (n > i) {
+				if (n - i <= j && n + i >= j) {
+					printf("*");
+				}
+				else
+					printf(" ");
+			}
+			else {
+				if (i - n + 2 <= j && n * 3 - i - 2 >= j) {
+					printf("*");
+				}
+				else
+					printf(" ");
+			}
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
+
 
 
 int main() {
-	p13();
+	p20();
 
 	return 0;
 }
