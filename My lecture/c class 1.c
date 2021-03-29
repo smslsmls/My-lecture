@@ -385,6 +385,7 @@ int p19() {
 		}
 		printf("\n");
 	}
+	return 0;
 }
 
 //  *  
@@ -398,11 +399,10 @@ int p20() {
 		for (int j = 1; j <= N * 2 - 1; j++)
 		{
 			if (N - i <= j && N + i >= j) {
-					printf("*");
+				printf("*");
 			}
 			else
 				printf(" ");
-			
 		}
 		printf("\n");
 	}
@@ -443,10 +443,21 @@ int p21() {
 	return 0;
 }
 
+int p22() {
+	for (int i = 1; i <= 100; i++)
+	{
+		if (i % 3 == 0)
+			printf("%4d", i);
+		if (i % 15 == 0)
+			printf("\n");
+	}
+	return 0;
+}
+
 
 
 int main() {
-	p20();
+	p22();
 
 	return 0;
 }
