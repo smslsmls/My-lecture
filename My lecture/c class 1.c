@@ -393,6 +393,7 @@ int p19() {
 // *** 
 //  *  
 int p20() {
+	int n;
 	scanf("%d", &n);
 	for (int i = 0; i < n * 2 - 1; i++)
 	{
