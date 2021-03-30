@@ -146,6 +146,19 @@ int repeat2() {
 
 	return 0;
 }
+//absolute
+int absolute() {
+	int n, abs1, abs2, abs3;
+	scanf("%d", &n);
+	if (n < 0)
+		abs1 = n * -1;
+	printf("%d\n", abs1);
+	abs2 = (n < 0) ? n * -1 : n;
+	printf("%d\n", abs2);
+	abs3 = abs(n);
+	printf("%d\n", abs3);
+	return 0;
+}
 
 
 
@@ -324,7 +337,6 @@ int p16() {
 
 	return 0;
 }
-
 //*****
 //*****
 //*****
@@ -344,7 +356,6 @@ int p17() {
 
 	return 0;
 }
-
 //*****
 //****
 //***
@@ -364,7 +375,6 @@ int p18() {
 
 	return 0;
 }
-
 //*****
 // ****
 //  ***
@@ -387,7 +397,6 @@ int p19() {
 	}
 	return 0;
 }
-
 //  *  
 // *** 
 //*****
@@ -409,7 +418,6 @@ int p20() {
 
 	return 0;
 }
-
 //  *  
 // *** 
 //*****
@@ -454,10 +462,44 @@ int p22() {
 	return 0;
 }
 
+int p23() {
+	int n = 1;
+	for (int i = 1; i < 101; i++)
+	{
+		if (i % 5 == 0 || i % 7 == 0) {
+			printf("%d ", i);
+			n++;
+		}
+		if (n % 6 == 0) {
+			printf("\n");
+			n = 1;
+		}
+	}
+	return 0;
+}
+
+int p24() {
+	int kor, mat, pro;
+	scanf("%d %d %d", &kor, &mat, &pro);
+	double avg = (kor + mat + pro) / 3.0;
+	if (avg >= 90.0)
+		printf("A");
+	else if (avg >= 80.0)
+		printf("B");
+	else if (avg >= 70.0)
+		printf("C");
+	else if (avg >= 60.0)
+		printf("D");
+	else
+		printF("F");
+
+	return 0;
+}
+
 
 
 int main() {
-	p22();
+	
 
 	return 0;
 }
