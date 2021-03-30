@@ -499,7 +499,7 @@ int p24() {
 
 
 int main() {
-	
+	p24();
 
 	return 0;
 }
