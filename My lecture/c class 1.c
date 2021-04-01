@@ -159,6 +159,18 @@ int absolute() {
 	printf("%d\n", abs3);
 	return 0;
 }
+//continue, break
+int repeat3() {
+	int sum = 0, num = 0;
+	while (num<100)
+	{
+		num++;
+		if (num % 2 == 1)
+			continue;
+		printf("%d\n", num);
+	}
+	return 0;
+}
 
 
 
@@ -491,7 +503,7 @@ int p24() {
 	else if (avg >= 60.0)
 		printf("D");
 	else
-		printF("F");
+		printf("F");
 
 	return 0;
 }
@@ -499,7 +511,7 @@ int p24() {
 
 
 int main() {
-	p24();
+	repeat3();
 
 	return 0;
 }

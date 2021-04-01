@@ -168,7 +168,7 @@ int p19() {
 
 int p20() {
 	int N;
-	int t=0;
+	int t = 0;
 	scanf("%d", &N);
 	while (t++ < 9)
 		printf("%d * %d = %d\n", N, t, N * t);
@@ -177,7 +177,7 @@ int p20() {
 }
 
 int p21() {
-	for (int i = 1; i < 20; i+=2)
+	for (int i = 1; i < 20; i += 2)
 	{
 		printf("%d ", i);
 	}
@@ -187,6 +187,7 @@ int p21() {
 
 int p22() {
 	int N;
+	scanf("%d", &N);
 	for (int i = 0; i < N; i++)
 	{
 		printf("%d\n", i);
@@ -200,7 +201,7 @@ int p23() {
 	scanf("%d", &N);
 	for (int i = 1; i <= 9; i++)
 	{
-		printF("%d X %d = %d\n", N, i, N * i);
+		printf("%d X %d = %d\n", N, i, N * i);
 	}
 
 	return 0;
@@ -243,8 +244,70 @@ int p25() {
 	return 0;
 }
 
+int p26() {
+	int s;
+	scanf("%d", &s);
+	if (s > 90)
+		printf("A");
+	if (s <= 90 && s > 80)
+		printf("B");
+	if (s <= 80 && s > 70)
+		printf("C");
+	if (s <= 70)
+		printf("F");
+
+	return 0;
+}
+
+int p27() {
+	int s;
+	scanf("%d", &s);
+	if (s < 80)
+		printf("ºÒ");
+	printf("ÇÕ°Ý");
+
+	return 0;
+}
+
+int p28() {
+	int n, m, t;
+	scanf("%d %d", &n, &m);
+	if (n > m)
+		t = n - m;
+	else
+		t = m - n;
+	printf("%d", t);
+	return 0;
+}
+
+int p29() {
+	int y;
+	scanf("%d", &y);
+	if (y >= 20)
+		printf("adult");
+	else
+		printf("%d yeats later", 20 - y);
+
+	return 0;
+}
+
+int p30() {
+	int a, b = -0x80000000;
+	int t = 3;
+	while (t--) {
+		scanf("%d", &a);
+		if (a > b)
+			b = a;
+	}
+	printf("%d", b);
+
+	return 0;
+}
+
+
+
 int main() {
-	p20();
+	p30();
 
 	return 0;
 }
