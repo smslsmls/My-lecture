@@ -171,6 +171,32 @@ int repeat3() {
 	}
 	return 0;
 }
+//switch case break
+int switchcase() {
+	int n;
+	scanf("%d", &n);
+	switch (n)
+	{
+	case 1:
+		printf("1");
+		break;
+	case 2:
+		printf("2");
+		break;
+	case 3:
+		printf("3");
+		break;
+	case 4:
+		printf("4");
+		break;
+	case 5:
+		printf("5");
+		break;
+	default:
+		break;
+	}
+	return 0;
+}
 
 
 
@@ -589,10 +615,22 @@ int p30() {
 	return 0;
 }
 
+int p31() {
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			if (i*10+j+j*10+i==99)
+				printf("%d %d\n", i, j);
+		}
+	}
+	return 0;
+}
+
 
 
 int main() {
-	p30();
+	p31();
 
 	return 0;
 }
