@@ -162,7 +162,7 @@ int absolute() {
 //continue, break
 int repeat3() {
 	int sum = 0, num = 0;
-	while (num<100)
+	while (num < 100)
 	{
 		num++;
 		if (num % 2 == 1)
@@ -508,10 +508,91 @@ int p24() {
 	return 0;
 }
 
+int p25() {
+	int n = 0, sum = 0;
+	while (1) {
+		sum += ++n;
+		if (sum > 100000)
+			break;
+	}
+	printf("%d %d", n, sum);
+	return 0;
+}
+
+int p26() {
+	int n = 0;
+	int sum = 0;
+	while (1) {
+		sum += ++n;
+		printf("%d\n", sum);
+		if (sum > 50000) {
+			sum -= n--;
+			break;
+		}
+	}
+	printf("%d %d", n, sum);
+	return 0;
+}
+
+int p27() {
+	int n = 0;
+	while (n++ < 50) {
+		if (n % 2 == 0 || n % 3 == 0)
+			continue;
+		printf("%d\n", n);
+	}
+	return 0;
+}
+
+int p28() {
+	for (int i = 2; i <= 9; i++)
+	{
+		if (i % 2 == 1)
+			continue;
+		for (int j = 1; j <= i; j++)
+		{
+			printf("%d * %d = %d\n", i, j, i * j);
+		}
+		printf("\n");
+	}
+	return 0;
+}
+
+int p29() {
+	int i = 1, j;
+	while (i <= 9) {
+		i++;
+		j = 0;
+		while (j <= 9) {
+			j++;
+			if (j > i)
+				break;
+			printf("%d * %d = %d\n", i, j, i * j);
+		}
+	}
+	return 0;
+}
+
+int p30() {
+	for (int i = 1; i <= 3; i++)
+	{
+		for (int j = 1; j < 10; j++)
+		{
+			for (int k = 3 * (i - 1) + 1; k <= 3 * i; k++)
+			{
+				printf("%d * %d = %d	", k, j, k * j);
+			}
+			printf("\n");
+		}
+		printf("\n\n");
+	}
+	return 0;
+}
+
 
 
 int main() {
-	repeat3();
+	p30();
 
 	return 0;
 }
