@@ -292,7 +292,7 @@ int p29() {
 }
 
 int p30() {
-	int a, b = -0x80000000;
+	int a, b = -0x7fffffff - 1;
 	int t = 3;
 	while (t--) {
 		scanf("%d", &a);
@@ -304,10 +304,87 @@ int p30() {
 	return 0;
 }
 
+int p31() {
+	int t = 0;
+	while (t++ < 9) {
+		printf("3*%d=%d\n", t, t * 3);
+	}
+
+	return 0;
+}
+
+int p32() {
+	int t = 1;
+	do {
+		printf("3*%d=%d\n", t, t * 3);
+	} while (t++ < 9);
+
+	return 0;
+}
+
+int p33() {
+	unsigned long long sum = 0;
+	unsigned long long a;
+	while (1) {
+		printf("0 입력시 종료 : ");
+		scanf("%lld", &a);
+		if (a == 0)
+			break;
+		sum += a;
+	}
+	printf("총합 : %lld", sum);
+
+	return 0;
+}
+
+int p34() {
+	int t = 0;
+	int n;
+	scanf("%d", &n);
+	while (t++ < 9) {
+		printf("%d*%d=%d\n", n, t, t * n);
+	}
+
+	return 0;
+}
+
+int p35() {
+	for (int i = 2; i <= 9; i++)
+	{
+		for (int j = 1; j <= 9; j++)
+		{
+			printf("%d * %d = %d\n", i, j, i * j);
+		}
+	}
+
+	return 0;
+}
+
+int p36() {
+	int n1, n2;
+	scanf("%d %d", &n1, &n2);
+	int mul = 1;
+	if (n1 < n2) {
+		for (int i = n1; i <= n2; i++)
+		{
+			mul *= i;
+		}
+	}
+	else {
+		for (int i = n2; i <= n1; i++)
+		{
+			mul *= i;
+		}
+	}
+	printf("%d", mul);
+
+	return 0;
+}
+
 
 
 int main() {
-	p30();
+	p36();
 
 	return 0;
 }
