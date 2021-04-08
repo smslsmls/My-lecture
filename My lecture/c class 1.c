@@ -4,6 +4,8 @@
 #include<string.h>
 #include<math.h>
 #include<limits.h>
+#include<conio.h>
+#define ADD(a,b,result) result=(a)+(b);
 
 typedef long long ll;
 typedef long double ld;
@@ -195,6 +197,39 @@ int switchcase() {
 	default:
 		break;
 	}
+	return 0;
+}
+//switch case 2
+int switchcase2() {
+	int n;
+	scanf("%d", &n);
+	switch (n)
+	{
+	case 1:
+		printf("ÀÛÀºÁÖ¸Ô");
+		break;
+	case 2:
+		printf("Å«ÁÖ¸Ô");
+		break;
+	case 3:
+		printf("¿À¸¥¹ß");
+		break;
+	case 4:
+		printf("¿Þ¹ß");
+		break;
+	default:
+		printf("*½Â·æ±Ç*");
+		break;
+	}
+	return 0;
+}
+//function
+int func() {
+	int n1, n2, n3;
+	n1 = printf("I love you\n");
+	printf("n1 = %d\n", n1);
+	n2 = printf("³­ ³Î »ç¶ûÇØ\n");
+	printf("n2 = %d\n", n2);
 	return 0;
 }
 
@@ -627,10 +662,121 @@ int p31() {
 	return 0;
 }
 
+int p32() {
+	char dir;
+	scanf("%c", &dir);
+	switch (dir)
+	{
+	case 'w':
+		printf("move up");
+		break;
+	case 'a':
+		printf("move left");
+		break;
+	case 's':
+		printf("move down");
+		break;
+	case 'd':
+		printf("move right");
+		break;
+	default:
+		printf("incollect direction");
+		break;
+	}
+	return 0;
+}
+
+int p33() {
+	int inp;
+	while (1) {
+		if (_kbhit()) {
+			inp = _getch();
+			switch (inp)
+			{
+			case 'w':
+				printf("move up\n");
+				break;
+			case 'a':
+				printf("move left\n");
+				break;
+			case 's':
+				printf("move down\n");
+				break;
+			case 'd':
+				printf("move right\n");
+				break;
+			default:
+				printf("incollect direction\n");
+				break;
+			}
+		}
+	}
+	return 0;
+}
+
+int p34() {
+	char str;
+	scanf("%c", &str);
+	switch (str)
+	{
+	case 'M':
+	case 'm':
+		printf("Good Morning");
+		break;
+	case 'A':
+	case 'a':
+		printf("Good Afternoon");
+		break;
+	case 'E':
+	case 'e':
+		printf("Good Evening");
+		break;
+	default:
+		printf("incollect choice");
+		break;
+	}
+	return 0;
+}
+
+int p35() {
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			for (int k = 0; k < 10; k++)
+			{
+				if (i * 101 + j * 20 + k * 101 == 1232)
+					printf("%d %d %d\n", i, j, k);
+			}
+		}
+	}
+	return 0;
+}
+
+int p36_add(int a, int b) {
+	return a + b;
+}
+int p36_sub(int a, int b) {
+	return a - b;
+}
+int p36_mul(int a, int b) {
+	return a * b;
+}
+double p36_div(int a, int b) {
+	if (b == 0)
+		return 0;
+	return (double)a / (double)b;
+}
+
+int p36() {
+	int a, b;
+	scanf("%d %d", &a, &b);
+	printf("add : %d\nsub : %d\nmul : %d\ndiv : %f\n", p36_add(a, b), p36_sub(a, b), p36_mul(a, b), p36_div(a, b));
+}
 
 
 int main() {
-	p31();
+	p36();
 
 	return 0;
 }

@@ -381,10 +381,132 @@ int p36() {
 	return 0;
 }
 
+int p37() {
+	int n;
+	scanf("%d", &n);
+	unsigned long long mul = 1;
+	for (int i = 1; i <= n; i++)
+	{
+		mul *= i;
+	}
+	printf("%llu", mul);
+
+	return 0;
+}
+
+int p38() {
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 0; j < 5; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
+
+int p39() {
+	for (int i = 1; i <= 5; i++)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
+
+int p40() {
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			printf(" ");
+		}
+		for (int j = 0; j < (5 - i) * 2 - 1; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
+
+int p41() {
+	for (int i = 0; i < 5; i++)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			printf(" ");
+		}
+		for (int j = 0; j < (5 - i) * 2 - 1; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+	for (int i = 3; i >= 0; i--)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			printf(" ");
+		}
+		for (int j = 0; j < (5 - i) * 2 - 1; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
+
+int p42() {
+	int n1, n2, n3;
+	char oper1, oper2;
+	scanf("%d %c %d %c %d", &n1, &oper1, &n2, &oper2, &n3);
+	if (oper2 == '*' || oper2 == '/') {
+		switch (oper2) {
+		case '*':
+			n2 *= n3;
+			break;
+		case '/':
+			n2 /= n3;
+			break;
+		}
+	}
+	switch (oper1) {
+	case '+':
+		n2 += n1;
+		break;
+	case '-':
+		n2 = n1 - n2;
+		break;
+	}
+	if (oper2 == '+' || oper2 == '-') {
+		switch (oper2) {
+		case '+':
+			n2 += n3;
+			break;
+		case '-':
+			n2 -= n3;
+			break;
+		}
+	}
+	printf("%d", n2);
+
+	return 0;
+}
+
 
 
 int main() {
-	p36();
+	p42();
 
 	return 0;
 }
