@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<time.h>
 
-int num[15] = {};
+int num[15];
 void init() {
 	srand((unsigned int)time(NULL));
 	int random;
