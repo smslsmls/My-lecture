@@ -772,11 +772,35 @@ int p36() {
 	int a, b;
 	scanf("%d %d", &a, &b);
 	printf("add : %d\nsub : %d\nmul : %d\ndiv : %f\n", p36_add(a, b), p36_sub(a, b), p36_mul(a, b), p36_div(a, b));
+	return 0;
+}
+
+int p37_tmax(int a,int b,int c) {
+	int t = (a > b) ? a : b;
+	return (t > c) ? t : c;
+}
+int p37_tmin(int a,int b,int c) {
+	int t = (a < b) ? a : b;
+	return (t < c) ? t : c;
+}
+int p37() {
+	int a, b, c;
+	scanf("%d %d %d", &a, &b, &c);
+	printf("%d %d", p37_tmax(a, b, c), p37_tmin(a, b, c));
+	return 0;
+}
+
+int p38() {
+	double a;
+	scanf("%lf", &a);
+	printf("sin : %lf\ncos : %lf\ntan : %lf", sin(a), cos(a), tan(a));
+	return 0;
 }
 
 
+
 int main() {
-	p36();
+	p38();
 
 	return 0;
 }
