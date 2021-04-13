@@ -232,6 +232,31 @@ int func() {
 	printf("n2 = %d\n", n2);
 	return 0;
 }
+//function2
+int func2_n;
+void func2_add(int);
+int func2() {
+	printf("n : %d\n", func2_n);
+	func2_add(3);
+	printf("n : %d\n", func2_n);
+	func2_n++;
+	printf("n : %d\n", func2_n);
+	return 0;
+}
+void func2_add(int x) {
+	func2_n += x;
+}
+//recursion
+void recur_recur(int n) {
+	if (n < 0)
+		return;
+	printf("Call a function in function : %d\n", n);
+	recur_recur(n - 1);
+}
+int recur() {
+	recur_recur(5);
+	return 0;
+}
 
 
 
@@ -797,10 +822,23 @@ int p38() {
 	return 0;
 }
 
+int p39_fact(int n){
+	if (n <= 0)
+		return 0;
+	else if (n == 1)
+		return 1;
+	else
+		return n * p39_fact(n - 1);
+}
+int p39() {
+	printf("%d\n", p39_fact(5));
+	return 0;
+}
+
 
 
 int main() {
-	p38();
+	p39();
 
 	return 0;
 }
