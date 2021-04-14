@@ -503,6 +503,51 @@ int p42() {
 	return 0;
 }
 
+int p43() {
+	int s, p;
+	scanf("%d %d", &s, &p);
+	printf("%s", (s >= p) ? "합격" : "불합격");
+
+	return 0;
+}
+
+int p44() {
+	int n;
+	scanf("%d", &n);
+	switch (n)
+	{
+	case 1:
+		printf("1st");
+		break;
+	case 2:
+		printf("2st");
+		break;
+	case 3:
+		printf("3st");
+		break;
+	default:
+		printf("%dth", n);
+		break;
+	}
+
+	return 0;
+}
+
+int p45() {
+	int n,t=1;
+	scanf("%d", &n);
+	for (int i = 1; i <= n; i++)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			printf("%d ", t++);
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
+
 
 
 int main() {
