@@ -534,7 +534,7 @@ int p44() {
 }
 
 int p45() {
-	int n,t=1;
+	int n, t = 1;
 	scanf("%d", &n);
 	for (int i = 1; i <= n; i++)
 	{
@@ -555,10 +555,53 @@ break : switch문을 종료하는 명령
 default : case에 없는 그 외의 모든 경우에 실행ㄴ
 */
 
+int p46() {
+	int n;
+	scanf("%d", &n);
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			if (j == i || j == n - i - 1)
+				printf("*");
+			else
+				printf(" ");
+		}
+		printf("\n");
+	}
+	return 0;
+}
+
+int p47() {
+	for (int i = 1; i < 10; i++)
+	{
+		for (int j = 2; j < 10; j++)
+		{
+			printf("%d * %d = %2d\t", j, i, i * j);
+		}
+		printf("\n");
+	}
+	return 0;
+}
+
+int p48() {
+	int n, m;
+	scanf("%d %d", &n, &m);
+	for (int i = 1; i <= n; i++)
+	{
+		for (int j = 1; j <= m; j++)
+		{
+			printf("(%d, %d)", i, j);
+		}
+		printf("\n");
+	}
+	return 0;
+}
+
 
 
 int main() {
-	p42();
+	p48();
 
 	return 0;
 }
