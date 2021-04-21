@@ -225,7 +225,7 @@ int switchcase2() {
 }
 //function
 int func() {
-	int n1, n2, n3;
+	int n1, n2;
 	n1 = printf("I love you\n");
 	printf("n1 = %d\n", n1);
 	n2 = printf("³­ ³Î »ç¶ûÇØ\n");
@@ -255,6 +255,28 @@ void recur_recur(int n) {
 }
 int recur() {
 	recur_recur(5);
+	return 0;
+}
+//1dimensional array
+int d1array_func(int n) {
+	static int a = 0;
+	a++;
+	printf("a = %d, n = %d\n", a, n);
+	return 0;
+}
+int d1array() {
+	d1array_func(1);
+	d1array_func(2);
+	return 0;
+}
+//string
+int strarr() {
+	char str[20];
+	int i = 0;
+	scanf("%s", &str);
+	while (str[i] != '\0') {
+		printf("%c", str[i++]);
+	}
 	return 0;
 }
 
@@ -680,7 +702,7 @@ int p31() {
 	{
 		for (int j = 0; j < 10; j++)
 		{
-			if (i*10+j+j*10+i==99)
+			if (i * 10 + j + j * 10 + i == 99)
 				printf("%d %d\n", i, j);
 		}
 	}
@@ -800,11 +822,11 @@ int p36() {
 	return 0;
 }
 
-int p37_tmax(int a,int b,int c) {
+int p37_tmax(int a, int b, int c) {
 	int t = (a > b) ? a : b;
 	return (t > c) ? t : c;
 }
-int p37_tmin(int a,int b,int c) {
+int p37_tmin(int a, int b, int c) {
 	int t = (a < b) ? a : b;
 	return (t < c) ? t : c;
 }
@@ -822,7 +844,7 @@ int p38() {
 	return 0;
 }
 
-int p39_fact(int n){
+int p39_fact(int n) {
 	if (n <= 0)
 		return 0;
 	else if (n == 1)
@@ -835,10 +857,45 @@ int p39() {
 	return 0;
 }
 
+int p40() {
+	int arr[5];
+	int max = INT_MIN;
+	int min = INT_MAX;
+	int bidx = 0;
+	int sidx = 0;
+	int sum = 0;
+	for (int i = 0; i < 5; i++)
+	{
+		scanf("%d", &arr[i]);
+		if (arr[i] > max) {
+			max = arr[i];
+			bidx = i;
+		}
+		if (arr[i] < min) {
+			min = arr[i];
+			sidx = i;
+		}
+		sum += arr[i];
+	}
+	printf("%d %d\n%d %d\n%d", max, bidx, min, sidx, sum);
+	return 0;
+}
+
+int p41() {
+	char str[20];
+	scanf("%s", str);
+	int len = strlen(str);
+	for (int i = len - 1; i >= 0; i--)
+	{
+		printf("%c", str[i]);
+	}
+	return 0;
+}
+
 
 
 int main() {
-	p39();
+	p41();
 
 	return 0;
 }

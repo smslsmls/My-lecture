@@ -598,10 +598,55 @@ int p48() {
 	return 0;
 }
 
+int p49() {
+	double arr[6];
+	double sum = 0;
+	for (int i = 0; i < 6; i++)
+	{
+		scanf("%lf", &arr[i]);
+		sum += arr[i];
+	}
+	printf("%.1f", sum / 6.0);
+	return 0;
+}
+
+int p50() {
+	int arr[10];
+	int odd = 0, even = 0;
+	for (int i = 0; i < 10; i++)
+	{
+		scanf("%d", &arr[i]);
+		if (i % 2 == 0)
+			odd += arr[i];
+		else
+			even += arr[i];
+	}
+	printf("odd : %d\neven : %d\n", odd, even);
+	return 0;
+}
+
+int p51() {
+	int max = -0x7fffffff - 1;
+	int min = 0x7fffffff;
+	int arr[100000];
+	int idx = 1;
+	while (idx++<100) {
+		scanf("%d", &arr[idx]);
+		if (arr[idx] > max)
+			max = arr[idx];
+		if (arr[idx] < min)
+			min = arr[idx];
+		if (arr[idx] == 999)
+			break;
+	}
+	printf("max : %d\nmin : %d", max, min);
+	return 0;
+}
+
 
 
 int main() {
-	p48();
+	p51();
 
 	return 0;
 }
