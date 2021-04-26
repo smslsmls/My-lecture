@@ -279,6 +279,32 @@ int strarr() {
 	}
 	return 0;
 }
+//pointer
+int pointer() {
+	//포인터란?
+	//주소를 저장하는 변수
+	//포인터는 연산이 가능, 포인터 연산
+	int* p;
+	int a = 100;
+	printf("%d\n", 100);
+	p = &a;
+	printf("%p\n", &a);
+	printf("%d\n", a);
+	printf("%d %p\n", *p, p);
+	*p = 300;
+	printf("%d\n", a);
+
+	printf("\n\n");
+
+	int num1 = 100, num2 = 100;
+	int* pNum;
+	pNum = &num1;
+	*pNum = 50;
+	pNum = &num2;
+	*pNum = -30;
+	printf("%d %d\n", num1, num2);
+	return 0;
+}
 
 
 
@@ -892,10 +918,44 @@ int p41() {
 	return 0;
 }
 
+int p42() {
+	int n1 = 100;
+	int* p;
+	p = &n1;
+	printf("주소(address) : %p, %p\n", p, &n1);
+	printf("내용,값 : %d,%d\n", *p, n1);
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%4d", (*p)++);
+	}
+	printf("\n%d\n", n1);
+	return 0;
+}
+
+int p43() {
+	int a[5] = { 0,1,2,3,4 };
+	printf("%d %d\n", a[0], a[0]);
+	printf("%p %p\n", &a[0], &a[0]);
+	printf("a주소 : %p, a[0]주소 : %p\n", &a, &a[0]);
+	int* p = &a;
+	printf("a주소 : %p\n", p);
+	return 0;
+}
+
+int p44() {
+	int arr[3] = { 0,1,2 };
+	int* p;
+	p = arr;//배열의 이름 arr은 주소다
+	printf("%d %d %d\n", arr[0], arr[1], arr[2]);
+	printf("%d %d %d\n", p[0], p[1], p[2]);
+	printf("%d %d %d\n", *p, *(p + 1), *(p + 2));
+	return 0;
+}
+
 
 
 int main() {
-	p41();
+	p44();
 
 	return 0;
 }
