@@ -643,10 +643,48 @@ int p51() {
 	return 0;
 }
 
+int p52() {
+	int arr[3];
+	int avg;
+	for (int i = 0; i < 3; i++)
+	{
+		scanf("%d", &arr[i]);
+	}
+	avg = (arr[0] + arr[1] + arr[2]) / 3;
+	if (avg < 80) {
+		printf("ºÒ");
+		avg = 80 - avg;
+	}
+	printf("ÇÕ°İ! %d", avg);
+	return 0;
+}
+
+int p53() {
+	int head, leg;
+	scanf("%d %d", &head, &leg);
+	printf("Åä³¢ : %d, ´ß : %d", (head / 2) - leg, leg * 2 - (head / 2));
+	return 0;
+}
+
+int p54() {
+	char str[100000];
+	int idx;
+	char in;
+	scanf("%s", str);
+	while (1) {
+		scanf("%d", &idx);
+		getchar();
+		scanf("%c", &in);
+		str[idx - 1] = in;
+		printf("%s", str);
+	}
+	return 0;
+}
+
 
 
 int main() {
-	p51();
+	p53();
 
 	return 0;
 }
