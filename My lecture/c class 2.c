@@ -681,10 +681,55 @@ int p54() {
 	return 0;
 }
 
+int p55() {
+	int arr[5];
+	int b = 0;
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%d번 학생의 프C 성적 : ", i + 1);
+		scanf("%d", &arr[i]);
+		b = (arr[i] > b) ? arr[i] : b;
+	}
+	printf("최고 점수 : %d", b);
+	return 0;
+}
+
+int p56() {
+	int arr[5];
+	int b = 0;
+	for (int i = 0; i < 5; i++)
+	{
+		scanf("%d", &arr[i]);
+		b = (arr[i] > b) ? arr[i] : b;
+	}
+	for (int i = 0; i < 5; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+	printf("%d", b);
+	return 0;
+}
+
+int p57() {
+	int N;
+	int arr[105];
+	double avg;
+	int sum = 0;
+	scanf("%d", &N);
+	for (int i = 0; i < N; i++)
+	{
+		scanf("%d", &arr[i]);
+		sum += arr[i];
+	}
+	avg = (double)sum / N;
+	printf("%.2lf", avg);
+	return 0;
+}
+
 
 
 int main() {
-	p53();
+	p57();
 
 	return 0;
 }

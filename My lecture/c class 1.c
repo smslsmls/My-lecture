@@ -305,6 +305,16 @@ int pointer() {
 	printf("%d %d\n", num1, num2);
 	return 0;
 }
+//pointerarray
+int pointerarr() {
+	int arr[3] = { 0,1,2 };
+	printf("%d %d %d\n", arr[0], arr[1], arr[2]);
+	int* ptr;
+	ptr = arr;
+	printf("%d %d %d\n", ptr[0], ptr[1], ptr[2]);
+	printf("%d %d %d\n", *ptr, *(ptr + 1), *(ptr + 2));
+	return 0;
+}
 
 
 
@@ -952,10 +962,56 @@ int p44() {
 	return 0;
 }
 
+int p45() {
+	char str1[10] = "abcd";
+	char* str2 = "ABCD";
+	printf("%s\n", str1);
+	printf("%s\n", str2);
+	str1[2] = 'x';
+	//str2[2] = 'x';  //런타임 에러
+	printf("%s\n", str1);
+	printf("%s\n", str2);
+	return 0;
+}
+
+int p46() {
+	int a = 1, b = 2, c = 3;
+	int arr[3] = { 10,20,30 };
+	int* parr[3] = { &a,&b,&c };
+	printf("%d\n", *parr[0]);
+	printf("%d\n", *parr[1]);
+	printf("%d\n", *parr[2]);
+	return 0;
+}
+
+int p47() {
+	char str[3][10] = { "Kim","Hong","Lee" };
+	char* parr[3] = { "Kim","Hong","Lee" };
+	printf("%s\n", str[0]);
+	printf("%s\n", str[1]);
+	printf("%s\n", str[2]);
+	return 0;
+}
+
+int p48() {
+	char str[3][10] = { "Kim","Hong","Lee" };
+	char* parr[3] = { str[0],str[1],str[2] };
+	printf("%s\n", str[0]);
+	printf("%s\n", str[1]);
+	printf("%s\n", str[2]);
+	printf("%s\n", *(parr));
+	printf("%s\n", *(parr + 1));
+	printf("%s\n", *(parr + 2));
+	printf("%s\n", *parr + 0);
+	printf("%s\n", *parr + 1);
+	printf("%s\n", *parr + 2);
+	return 0;
+}
+
 
 
 int main() {
-	p44();
+	p48();
 
 	return 0;
 }
