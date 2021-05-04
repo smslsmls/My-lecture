@@ -1008,10 +1008,43 @@ int p48() {
 	return 0;
 }
 
+int p49() {
+	int score[10] = { 34,6,34,6,234,6,789,56,23,2 };
+	int rank[10];
+	for (int i = 0; i < 10; i++)
+	{
+		rank[i] = 1;
+		for (int j = 0; j < 10; j++)
+		{
+			if (score[i] < score[j])
+				rank[i]++;
+		}
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d번 랭크 : %d\n", i + 1, rank[i]);
+	}
+	return 0;
+}
+
+int p50() {
+	int score[10] = { 95,64,78,94,65,71,72,59,45,78 };
+	int rank[102] = { 0, };
+	for (int i = 0; i < 10; i++)
+		rank[score[i]]++;
+	rank[101] = 1;
+	for (int i = 101 - 1; i >= 0; i--)
+		rank[i] = rank[i] + rank[i + 1];
+	printf("학번 점수 등수\n");
+	for (int i = 0; i < 10; i++)
+		printf("%3d %5d %3d\n", i + 1, score[i], rank[score[i] + 1]);
+	return 0;
+}
+
 
 
 int main() {
-	p48();
+	p50();
 
 	return 0;
 }
