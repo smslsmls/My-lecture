@@ -6,6 +6,7 @@
 #include<limits.h>
 #include<conio.h>
 #define ADD(a,b,result) result=(a)+(b);
+#define SWAP(x,y) { x = x + y; y = x - y; x = x - y; }
 
 typedef long long ll;
 typedef long double ld;
@@ -314,6 +315,57 @@ int pointerarr() {
 	printf("%d %d %d\n", ptr[0], ptr[1], ptr[2]);
 	printf("%d %d %d\n", *ptr, *(ptr + 1), *(ptr + 2));
 	return 0;
+}
+//slug array
+int slug_array() {
+	int n;
+	scanf("%d", &n);
+	int size = n;
+	int cnt = 1;
+	int row = 0, col = -1;
+	int inc = 1;
+	int arr[100][100] = { 0 };
+	while (n > 0) {
+		for (int i = 0; i < n; i++)
+		{
+			col += inc;
+			arr[row][col] = cnt++;
+		}
+		n--;
+		if (n == 0)
+			break;
+		for (int i = 0; i < n; i++)
+		{
+			row += inc;
+			arr[row][col] = cnt++;
+		}
+		inc *= -1;
+	}
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			printf("%3d", arr[i][j]);
+		}
+		printf("\n");
+	}
+	return 0;
+}
+//bubble sort
+int bubble_sort() {
+	int arr[] = { 6,23,7,34,7,3,7,9,4,23 };
+	for (int i = 0; i < 9; i++)
+	{
+		for (int j = 0; j < 9-i; j++)
+		{
+			if (arr[j] > arr[j + 1])
+				SWAP(arr[j], arr[j + 1]);
+		}
+	}
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d ", arr[i]);
+	}
 }
 
 
@@ -1044,7 +1096,7 @@ int p50() {
 
 
 int main() {
-	p50();
+	bubble_sort();
 
 	return 0;
 }

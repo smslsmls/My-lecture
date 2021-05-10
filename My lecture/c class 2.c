@@ -726,10 +726,58 @@ int p57() {
 	return 0;
 }
 
+int p58() {
+	int arr[15] = {0,};
+	int a;
+	scanf("%d", &a);
+	while (a > 0 && a <= 10) {
+		arr[a]++;
+		scanf("%d", &a);
+	}
+	for (int i = 1; i <= 10; i++)
+	{
+		if (arr[i] == 0)
+			continue;
+		printf("%d : %d개\n", i, arr[i]);
+	}
+	return 0;
+}
+
+int p59() {
+	int arr[5][5] = { 0 };
+	for (int i = 0; i < 3; i++)
+	{
+		printf("%d번 점수 : ", i + 1);
+		for (int j = 0; j < 3; j++)
+		{
+			scanf("%d", &arr[i][j]);
+			arr[i][3] += arr[i][j];
+			arr[3][j] += arr[i][j];
+		}
+		arr[3][3] += arr[i][3];
+	}
+	printf("     컴일  프C 수학 총점\n");
+	for (int i = 0; i < 3; i++)
+	{
+		printf(" %d번 ", i + 1);
+		for (int j = 0; j < 4; j++)
+		{
+			printf("%4d ", arr[i][j]);
+		}
+		printf("\n");
+	}
+	printf("합계 ");
+	for (int i = 0; i < 4; i++)
+	{
+		printf("%4d ", arr[3][i]);
+	}
+	return 0;
+}
+
 
 
 int main() {
-	p57();
+	p59();
 
 	return 0;
 }
