@@ -411,6 +411,17 @@ int selection_sort() {
 	}
 	return 0;
 }
+//char functions
+int char_func() {
+	int i;
+	char str[256];
+	printf("Enter a number : ");
+	//fgets(str,256,stdin);
+	gets(str, 256);
+	i = atoi(str);
+	printf("입력된 정수값 : %d, 2배의 값 : %d.\n", i, i * 2);
+	return 0;
+}
 
 
 
@@ -1137,10 +1148,24 @@ int p50() {
 	return 0;
 }
 
+int p51() {
+	int i;
+	char str[256];
+	printf("Enter a number : ");
+	scanf("%d", &i);
+	itoa(i, str, 10);
+	printf("decimal : %s\n", str);
+	itoa(i, str, 16);
+	printf("hexadecimal : %s\n", str);
+	itoa(i, str, 2);
+	printf("binary : %s\n", str);
+	return 0;
+}
+
 
 
 int main() {
-	selection_sort();
+	p51();
 
 	return 0;
 }
