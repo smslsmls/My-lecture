@@ -86,7 +86,7 @@ int bitwise() {
 	return 0;
 }
 //sizeof operator
-int size() {
+int sizeof_oper() {
 	char ch = 9;
 	int n = 9;
 	double d = 9;
@@ -320,7 +320,6 @@ int pointerarr() {
 int slug_array() {
 	int n;
 	scanf("%d", &n);
-	int size = n;
 	int cnt = 1;
 	int row = 0, col = -1;
 	int inc = 1;
@@ -341,9 +340,9 @@ int slug_array() {
 		}
 		inc *= -1;
 	}
-	for (int i = 0; i < size; i++)
+	for (int i = 0; i < n; i++)
 	{
-		for (int j = 0; j < size; j++)
+		for (int j = 0; j < n; j++)
 		{
 			printf("%3d", arr[i][j]);
 		}
@@ -366,6 +365,51 @@ int bubble_sort() {
 	{
 		printf("%d ", arr[i]);
 	}
+	return 0;
+}
+//function3
+//call by value
+void func3_swap1(int a, int b) {
+	a += b;
+	b = a - b;
+	a -= b;
+}
+//call by reperence
+void func3_swap2(int* a, int* b) {
+	*a += *b;
+	*b = *a - *b;
+	*a -= *b;
+}
+int func3() {
+	int a = 5, b = 8;
+	printf("a=%d, b=%d\n", a, b);
+	func3_swap1(a, b);
+	printf("a=%d, b=%d\n", a, b);
+	func3_swap2(&a, &b);
+	printf("a=%d, b=%d\n", a, b);
+	return 0;
+}
+//selection sort
+int selection_sort() {
+	int arr[] = { 5,1,3,7,2,9 };
+	int s;
+	for (int i = 0; i < 6-1; i++)
+	{
+		s = i;
+		for (int j = i+1; j < 6; j++)
+		{
+			if (arr[j] < arr[s])
+				s = j;
+		}
+		if (i == s)
+			continue;
+		SWAP(arr[i], arr[s]);
+	}
+	for (int i = 0; i < 6; i++)
+	{
+		printf("%3d", arr[i]);
+	}
+	return 0;
 }
 
 
@@ -999,7 +1043,7 @@ int p43() {
 	printf("%d %d\n", a[0], a[0]);
 	printf("%p %p\n", &a[0], &a[0]);
 	printf("a林家 : %p, a[0]林家 : %p\n", &a, &a[0]);
-	int* p = &a;
+	int* p = a;
 	printf("a林家 : %p\n", p);
 	return 0;
 }
@@ -1096,7 +1140,7 @@ int p50() {
 
 
 int main() {
-	bubble_sort();
+	selection_sort();
 
 	return 0;
 }

@@ -630,7 +630,7 @@ int p51() {
 	int min = 0x7fffffff;
 	int arr[100000];
 	int idx = 1;
-	while (idx++<100) {
+	while (idx++ < 100) {
 		scanf("%d", &arr[idx]);
 		if (arr[idx] > max)
 			max = arr[idx];
@@ -727,7 +727,7 @@ int p57() {
 }
 
 int p58() {
-	int arr[15] = {0,};
+	int arr[15] = { 0, };
 	int a;
 	scanf("%d", &a);
 	while (a > 0 && a <= 10) {
@@ -774,10 +774,171 @@ int p59() {
 	return 0;
 }
 
+int p60() {
+	int n;
+	scanf("%d", &n);
+	int s = n;
+	int cnt = 1;
+	int row = 0, col = -1;
+	char arr[100][100];
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n; j++)
+		{
+			arr[i][j] = ' ';
+		}
+		arr[i][n] = 0;
+	}
+	for (int i = 0; i < n; i++)
+	{
+		col += 1;
+		arr[row][col] = '*';
+	}
+	n--;
+	for (int i = 0; i < n; i++)
+	{
+		row += 1;
+		arr[row][col] = '*';
+	}
+	for (int i = 0; i < n; i++)
+	{
+		col += -1;
+		arr[row][col] = '*';
+	}
+	n--;
+	for (int i = 0; i < n; i++)
+	{
+		row += -1;
+		arr[row][col] = '*';
+	}
+	for (int i = 0; i < s; i++)
+	{
+		printf("%s\n", arr[i]);
+	}
+	return 0;
+}
+
+int p61_f(int a) {
+	return a * (a + 1) / 2;
+}
+int p61() {
+	int n;
+	scanf("%d", &n);
+	printf("%d\n", p61_f(n));
+	return 0;
+}
+
+int p62_arr[10];
+int p62_f() {
+	int b = 0;
+	for (int i = 1; i < 10; i++)
+	{
+		if (p62_arr[i] > p62_arr[b])
+			b = i;
+	}
+	return b;
+}
+int p62() {
+	int N;
+	scanf("%d", &N);
+	for (int i = 0; i < N; i++)
+	{
+		scanf("%d", &p62_arr[i]);
+	}
+	printf("%d", p62_f());
+	return 0;
+}
+
+int p63() {
+	int N;
+	scanf("%d", &N);
+	for (int i = 0; i < N - 1; i++)
+	{
+		printf("*");
+		for (int j = 0; j < i - 1; j++)
+		{
+			printf(" ");
+		}
+		if (i != 0)
+			printf("*");
+		printf("\n");
+	}
+	for (int i = 0; i < N; i++)
+	{
+		printf("*");
+	}
+	return 0;
+}
+
+int p64() {
+	int arr[105][105] = { 0 };
+	int N, M;
+	int row = 0;
+	int col = 0;
+	int r, c;
+	int cnt = 1;
+	scanf("%d %d", &N, &M);
+	int s = (N > M) ? M : N;
+	for (int i = 1; i <= s - 1; i++)
+	{
+		c = col++;
+		r = row;
+		for (int j = 0; j < i; j++)
+		{
+			arr[c][r] = cnt++;
+			c--;
+			r++;
+		}
+	}
+	c = col;
+	r = row;
+	for (int i = 0; i < s; i++)
+	{
+		arr[c][r] = cnt++;
+		c--;
+		r++;
+	}
+	for (int i = 0; i < abs(N - M); i++)
+	{
+		if (M > N)
+			row++;
+		else
+			col++;
+		c = col;
+		r = row;
+		for (int j = 0; j < s; j++)
+		{
+			arr[c][r] = cnt++;
+			c--;
+			r++;
+		}
+	}
+	for (int i = s - 1; i > 0; i--)
+	{
+		c = col;
+		r = ++row;
+		for (int j = 0; j < i; j++)
+		{
+			arr[c][r] = cnt++;
+			c--;
+			r++;
+		}
+	}
+	for (int i = 0; i < N; i++)
+	{
+		for (int j = 0; j < M; j++)
+		{
+			printf("%3d ", arr[i][j]);
+		}
+		printf("\n");
+	}
+	return 0;
+}
+
 
 
 int main() {
-	p59();
+	p64();
 
 	return 0;
 }
