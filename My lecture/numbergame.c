@@ -35,15 +35,15 @@ int main() {
 		}
 		if (s == 0 && b == 0)
 			printf("out\n");
-		else if (s == 0)
-			printf("%db", b);
-		else if (b == 0&&s!=3)
-			printf("%ds", s);
-		else if(s!=3)
-			printf("%ds %db", s, b);
-		else {
+		else if(s==3){
 			printf("found number!");
 			break;
+		}
+		else {
+			if (s != 0)
+				printf("%ds ", s);
+			if (b != 0)
+				printf("%db ", b);
 		}
 		printf("\n");
 	}

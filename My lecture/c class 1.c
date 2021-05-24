@@ -355,7 +355,7 @@ int bubble_sort() {
 	int arr[] = { 6,23,7,34,7,3,7,9,4,23 };
 	for (int i = 0; i < 9; i++)
 	{
-		for (int j = 0; j < 9-i; j++)
+		for (int j = 0; j < 9 - i; j++)
 		{
 			if (arr[j] > arr[j + 1])
 				SWAP(arr[j], arr[j + 1]);
@@ -393,10 +393,10 @@ int func3() {
 int selection_sort() {
 	int arr[] = { 5,1,3,7,2,9 };
 	int s;
-	for (int i = 0; i < 6-1; i++)
+	for (int i = 0; i < 6 - 1; i++)
 	{
 		s = i;
-		for (int j = i+1; j < 6; j++)
+		for (int j = i + 1; j < 6; j++)
 		{
 			if (arr[j] < arr[s])
 				s = j;
@@ -1162,10 +1162,52 @@ int p51() {
 	return 0;
 }
 
+int p52() {
+	int	arr[100] = { 0 };
+	int in[] = { 155, 179, 167, 156, 179, 145, 180, 175, 167, 165, 157, 186, 155, 184, 163, 154, 157, 159, 171, 168, 179, 173, 153, 171, 171, 175, 172, 174, 173, 179, 164, 167, 172, 176, 174, 181, 181, 161, 190, -99 };
+	int a;
+	int t = 0;
+	for (int i = 0;; i++) {
+		a = in[i];
+		if (a == -99)
+			break;
+		if (a < 150 || a>184)
+			continue;
+		switch (a / 10)
+		{
+		case 15:
+			t = 0;
+			break;
+		case 16:
+			t = 2;
+			break;
+		case 17:
+			t = 4;
+			break;
+		case 18:
+			t = 6;
+			break;
+		}
+		if (a % 10 >= 5)
+			arr[t + 1]++;
+		else
+			arr[t]++;
+	}
+	for (int i = 0; i < 7; i++)
+	{
+		for (int j = 0; j < arr[i]; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+	return 0;
+}
+
 
 
 int main() {
-	p51();
+	p52();
 
 	return 0;
 }
